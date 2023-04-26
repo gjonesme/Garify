@@ -1,0 +1,18 @@
+.SearchResults {
+  background-color: #060606;
+  color: #ffffff;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.TopResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.TopSongs {
+    padding-left: 25px;
+    flex-grow: 1;
+}
+

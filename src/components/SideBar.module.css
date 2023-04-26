@@ -1,0 +1,39 @@
+.SideBar {
+  height: 100%;
+  width: 350px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  z-index: 1;
+}
+
+.SideBar ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 20px;
+  /* display: flexbox; */
+}
+
+.SideBar li {
+  padding: 5px;
+}
+
+.NavHeader {
+  color: white;
+}
+
+.NavList a {
+  text-decoration: none;
+  color: #a7a7a7;
+}
+
+.NavList a:visited {
+  color: #a7a7a7;
+}
+
+.NavList a:hover {
+  color: white;
+}
+.NavList a:active {
+  color: white;
+}

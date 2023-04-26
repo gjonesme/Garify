@@ -1,0 +1,23 @@
+.TopResult {
+    width: 40%;
+    color: #ffffff;
+    opacity: 93%;
+    /* margin: 20px; */
+}
+
+.TopArtist {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    border-radius: 10px;
+}
+
+.TopArtist:hover {
+    background-color: #212121;
+}
+
+.TopArtist img {
+    border-radius: 50%;
+    width: 150px;
+}

@@ -1,0 +1,19 @@
+.AlbumCard {
+  width: 200px;
+  margin: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.AlbumCard:hover {
+  background-color: #1a1a1a;
+}
+
+.AlbumCardImage {
+  border-radius: 5px;
+  width: 150px;
+}

@@ -1,0 +1,16 @@
+.TopSongsContainer {
+    /* color: white; */
+    /* margin: 20px; */
+}
+
+.TopSongs {
+  /* width: 40%; */
+  /* padding: 15px; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: stretch; */
+  /* flex-grow: 2; */
+  /* background-color: black; */
+  color: white;
+  border-radius: 10px;
+}

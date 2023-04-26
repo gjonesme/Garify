@@ -1,0 +1,49 @@
+.PlaylistRow {
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-wrap: wrap; */
+  /* overflow: hidden; */
+
+}
+
+.PlaylistItems {
+
+  --column-count: 7;
+  --grid-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
+  grid-gap: var(--grid-gap);
+}
+
+.PlaylistRow h2 {
+  display: inline-flex;
+}
+.PlaylistRow span {
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.PlaylistRow ul {
+  /* display: flex;
+  flex-wrap: wrap;
+  overflow: hidden; */
+/* 
+  --column-count: 4;
+  --grid-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
+  grid-gap: var(--grid-gap); */
+}
+
+.PlaylistRow li {
+  list-style: none;
+  height: 350px;
+  width: 200px;
+  /* border: solid green 1px; */
+}
+
+.PlaylistRowHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}

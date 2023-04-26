@@ -1,0 +1,22 @@
+.SearchBar {
+  position: fixed;
+  top: 100;
+  left: 100;
+}
+
+.SearchPage {
+  background-color: #121212;
+  color: #a7a7a7;
+  padding-top: 50px;
+  overflow: none;
+}
+
+.SearchPage h2 {
+  display: inline;
+  padding-left: 20px;
+}
+
+.SearchPage ul {
+  display: flex;
+  flex-wrap: wrap;
+}

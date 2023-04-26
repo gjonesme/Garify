@@ -1,0 +1,47 @@
+.SongCardContainer {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.SongCardContainer:hover {
+    background-color: #212121;
+}
+
+.SongCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.SongCard h3 {
+  margin: 0;
+  /* overflow: hidden; */
+  /* display: inline; */
+}
+
+.SongTitleArtist {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.SongCardImage {
+  /* width: 50px; */
+  /* border: solid 1px green;
+  z-index: 1; */
+}
+
+.Explicit {
+    background-color: #cccccc;
+    color: #000000;
+    padding: 2px;
+    margin-right: 8px;
+    border-radius: 3px;
+    font-size: 80%;
+    /* border: solid blue 1px; */
+}

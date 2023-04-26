@@ -1,0 +1,19 @@
+.ArtistCard {
+  /* width: 200px; */
+  margin: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  color: white;
+  border-radius: 10px;
+}
+
+.ArtistCard:hover {
+    background-color: #1a1a1a;
+}
+
+.ArtistCardImage {
+  border-radius: 50%;
+  /* width: 150px; */
+}
