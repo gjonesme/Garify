@@ -1,7 +1,11 @@
 html,
 body {
   margin: 0;
-  height: 100vh;
+  height: 100%;
+  color: white;
+  background-color: #000;
+  /* overflow: auto; */
+  /* border: 1px solid orange; */
   /* max-height: 90vh; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -16,6 +20,8 @@ code {
     monospace;
 }
 
-:root {
+#root {
   --column-count: 5;
+  height: 100%;
+  /* border: 1px solid purple; */
 }

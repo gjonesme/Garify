@@ -6,13 +6,27 @@ form input {
   height: 40px;
   /* width: 400px; */
   border-radius: 20px;
-  outline: none;
+  border: none;
 
   /* background-color: white;
-  background-image: url('../../public/SearchIcon.svg');
+  background-image: url("../../public/SearchIcon.svg");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding-left: 40px; */
+}
+
+.SearchBar {
+  /* width: 100%; */
+  /* margin-bottom: 10px; */
+}
+
+.SearchIcon {
+  /* position: absolute; */
+}
+
+.InputField {
+  /* width: 100%; */
+  text-indent: 10px;
 }
 
 /* <svg

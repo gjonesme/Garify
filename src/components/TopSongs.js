@@ -7,8 +7,8 @@ const TopSongs = (props) => {
   const trackItems = props.queryResults.data.tracks.items
     .slice(0, 4)
     .map((track) => {
-    //   console.log(track);
-      return <SongCard key={track.id} trackData={track} />;
+      //   console.log(track);
+      return <SongCard key={track.id} trackData={track} includeArtist={true} />;
     });
 
   return (

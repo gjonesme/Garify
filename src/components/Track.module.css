@@ -1,0 +1,25 @@
+.Track {
+  color: white;
+  list-style: none;
+  display: grid;
+  grid-template-columns: [index] 20px [first] 50px [trackName] 4fr [last] minmax(
+      120px,
+      1fr
+    );
+  align-items: center;
+  column-gap: 8px;
+  /* justify-items: start; */
+  padding: 10px;
+  /* border: solid 1px green; */
+  border-radius: 5px;
+}
+
+.NumberItem {
+  /* grid-column: span 1;
+  background-color: red; */
+  justify-self: end;
+}
+
+.Track:hover {
+  background-color: black;
+}

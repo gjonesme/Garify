@@ -13,18 +13,27 @@ const SongCard = (props) => {
 
   return (
     <div className={classes.SongCardContainer}>
+      {props.index != null ? (
+        <span className={classes.SongIndex}>{props.index + 1}</span>
+      ) : (
+        <span></span>
+      )}
+
       <img
         className={classes.SongCardImage}
         src={props.trackData.album.images[2].url}
       ></img>
       <div className={classes.SongCard}>
         <div className={classes.SongTitleArtist}>
-          <h3>{props.trackData.name}</h3>
+          <span>{props.trackData.name}</span>
           <div>
             {props.trackData.explicit ? (
               <span className={classes.Explicit}>E</span>
             ) : null}
-            <span>{props.trackData.artists[0].name}</span>
+
+            {props.includeArtist ? (
+              <span>{props.trackData.artists[0].name}</span>
+            ) : null}
           </div>
         </div>
         {/* <Heart/> */}

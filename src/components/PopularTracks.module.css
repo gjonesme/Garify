@@ -1,0 +1,23 @@
+/* .PopularTracks {
+  display: flex;
+  flex-direction: column;
+} */
+
+.PopularTracks {
+  color: white;
+}
+
+.PopularTracks button {
+  background: none;
+  border: none;
+  color: hsla(0, 0%, 100%, 0.7);
+  padding: 16px;
+}
+
+.PopularTracks ul {
+  margin: 0;
+}
+
+.PopularTracksList {
+  padding: 0 2%;
+}

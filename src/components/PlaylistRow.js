@@ -5,11 +5,11 @@ import MediaCard from "./MediaCard";
 
 const PlaylistRow = (props) => {
   if (props.playlists.items) {
-    const playlistItems = props.playlists.items.slice(0,4).map((item) => {
+    const playlistItems = props.playlists.items.map((item) => {
       // console.log(item.id);
       return (
         <li key={item.id}>
-          <PlaylistCard  item={item} />
+          <PlaylistCard item={item} />
         </li>
       );
     });

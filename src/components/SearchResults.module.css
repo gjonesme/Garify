@@ -5,6 +5,10 @@
   padding-right: 25px;
 }
 
+.FilterBar {
+  padding-top: 10px;
+}
+
 .TopResults {
   display: flex;
   flex-direction: row;
@@ -12,7 +16,6 @@
 }
 
 .TopSongs {
-    padding-left: 25px;
-    flex-grow: 1;
+  padding-left: 25px;
+  flex-grow: 1;
 }
-

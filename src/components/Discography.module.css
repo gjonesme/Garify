@@ -1,0 +1,31 @@
+.Discography {
+  color: white;
+  /* display: flex;
+  flex-direction: column; */
+  /* padding-left: 10px; */
+  padding-right: 20px;
+}
+
+.Discography button {
+  border: none;
+  border-radius: 16px;
+  color: white;
+  background-color: black;
+  height: 32px;
+  margin: 5px;
+}
+
+.Light {
+  color: black;
+  background-color: white;
+}
+
+.Discography ul {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(164px,1fr)); */
+  grid-template-columns: repeat(var(--column-count), minmax(164px, 1fr));
+  grid-template-rows: 1fr;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  grid-gap: 16px;
+}

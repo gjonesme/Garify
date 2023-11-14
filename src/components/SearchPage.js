@@ -22,7 +22,7 @@ const SearchPage = (props) => {
       },
     })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         setCategories(res.data.categories);
       })
       .catch((err) => {
@@ -35,28 +35,32 @@ const SearchPage = (props) => {
     const itemList = categories.items.map((item) => {
       return <Card key={item.id} item={item} />;
     });
-  if (props.query != "") {
-    return (
-      <>
-        <SearchResults query={props.query} queryResults={props.queryResults} setLink={props.setLink} />
-      </>
-    );
+
+    if (props.query != "") {
+      return (
+        <>
+          <SearchResults
+            query={props.query}
+            queryResults={props.queryResults}
+            setLink={props.setLink}
+            setQuery={props.setQuery}
+          />
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className={classes.SearchPage}>
+            <h2>Browse all</h2>
+            <ul>{itemList}</ul>
+          </div>
+        </>
+      );
+    }
   } else {
     return (
       <>
-        <div className={classes.SearchPage}>
-          <h2>Browse all</h2>
-          <ul>{itemList}</ul>
-        </div>
-      </>
-    );
-  }
-    } else {
-    return (
-      <>
-        <div>
-          <h2>LOADING... </h2>
-        </div>
+        <div>{/* <h2>LOADING... </h2> */}</div>
       </>
     );
   }

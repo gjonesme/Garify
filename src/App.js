@@ -14,11 +14,15 @@ import qs from "qs";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import SearchPage from "./components/SearchPage";
+import SearchResults from "./components/SearchResults";
 import Home from "./components/Home";
 import Library from "./icons/Library";
 import SearchRouteTest from "./components/SearchRouteTest";
 import axios from "axios";
 import ArtistPage from "./components/ArtistPage";
+import AlbumPage from "./components/AlbumPage";
+import PlaylistPage from "./components/PlaylistPage";
+import GenrePage from "./components/GenrePage";
 
 function App() {
   // const [categories, setCategories] = useState({});
@@ -49,8 +53,6 @@ function App() {
     })
       .then(function (response) {
         setAccessToken(response.data.access_token);
-        console.log("access token: ");
-        console.log(response.data.access_token);
         // return access_token;
       })
       .catch(function (error) {
@@ -58,39 +60,20 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    axios({
-      url: "https://api.spotify.com/v1/browse/categories",
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-      params: {
-        country: "US",
-        limit: 50,
-        locale: "en_US",
-      },
-    })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [accessToken]);
-
   return (
     <div className="App">
       <div className="SideBar">
-        <SideBar />
+        <SideBar setQuery={setQuery} />
       </div>
 
       <div className="RightContainer">
         <TopBar
           accessToken={accessToken}
           location={location}
+          query={query}
           setQuery={setQuery}
           setQueryResults={setQueryResults}
+          setLink={setLink}
         />
         <Routes>
           <Route path="/" element={<Home accessToken={accessToken} />} />
@@ -106,10 +89,31 @@ function App() {
             }
           ></Route>
           <Route
+            path="search/:queryId"
+            element={
+              <SearchResults
+                accessToken={accessToken}
+                queryResults={queryResults}
+                setLink={setLink}
+              />
+            }
+          ></Route>
+          <Route
             path="artist/:artistId"
             element={<ArtistPage accessToken={accessToken} link={link} />}
           />
-          <Route path="playlist/:playlistId" element={<ArtistPage />} />
+          <Route
+            path="album/:albumId"
+            element={<AlbumPage accessToken={accessToken} link={link} />}
+          />
+          <Route
+            path="playlist/:playlistId"
+            element={<PlaylistPage accessToken={accessToken} link={link} />}
+          />
+          <Route
+            path="genre/:playlistId"
+            element={<GenrePage accessToken={accessToken} link={link} />}
+          />
 
           <Route path="collections" element={<Library />} />
         </Routes>

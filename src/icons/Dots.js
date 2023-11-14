@@ -15,15 +15,16 @@ const Dots = () => {
         />
       </svg> */}
       <svg
-        width="16"
-        height="16"
+        width="24"
+        height="24"
         // className="Svg-ytk21e-0 jAKAlG home-active-icon"
         role="img"
         viewBox="0 0 16 16"
       >
         <path
           fill="currentColor"
-          d="M3 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm6.5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM16 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+          d="M3 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm6.5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM16 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+        />
       </svg>
     </>
   );

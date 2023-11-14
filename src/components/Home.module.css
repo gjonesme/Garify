@@ -1,10 +1,9 @@
 .Home {
-    background-color: #000000;
-    color: #ffffff;
-    /* border: solid red 1px; */
-    height: 100%;
-    width: 100vw - 350px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  background-color: #080808;
+  /* color: #ffffff; */
+  /* border: solid red 1px; */
+  height: 100%;
+  /* width: 100vw - 350px; */
+  /* overflow: hidden; */
+  padding: 10px;
 }

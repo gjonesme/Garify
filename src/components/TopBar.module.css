@@ -6,9 +6,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #000000;
-  color: #838383;
-  
+  background-color: #121212;
+  /* background-color: rgb(240, 200, 208); TSwift Lover color */
+  /* color: #838383; */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* border: 1px solid red; */
 }
 
 .TopBar ul {
@@ -17,33 +20,43 @@
 }
 
 .TopBar li {
-    display: inline;
-    padding: 10px;
+  display: inline;
+  padding: 10px;
 }
 
 .button {
-    background-color: #000000; 
-    border: none;
-    border-radius: 24px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    opacity: 75%;
+  background-color: #000000;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 75%;
 }
 
 .button:hover {
-    transform: scale(1.1);
-    opacity: 100%;
+  transform: scale(1.1);
+  opacity: 100%;
 }
 
 .buttonHighlighted {
-    color: #000000;
-    background-color: #FFFFFF;
-    opacity: 100%;
+  color: #000000;
+  background-color: #ffffff;
+  opacity: 100%;
+}
+
+.ArrowButton {
+  cursor: not-allowed;
+  color: #888888;
+}
+
+.TopBar .Tooltip {
+  background-color: #0d72ea;
+  width: 250px;
 }
 
 /* .buttonHighlighted:hover {

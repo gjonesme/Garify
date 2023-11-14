@@ -2,10 +2,10 @@ import React from "react";
 
 const FilterButton = (props) => {
   const onClickHandler = (e) => {
-    props.setActiveFilter(props.filterName);
+    props.setActiveFilter(props.filter);
   };
   const buttonStyle =
-    props.activeFilter == props.filterName ? activeStyle : inactiveStyle;
+    props.activeFilter == props.filter ? activeStyle : inactiveStyle;
   return (
     <button style={buttonStyle} onClick={onClickHandler}>
       {props.filterName}

@@ -3,6 +3,7 @@
   list-style: none;
   margin: 10px;
   cursor: pointer;
+  color: #a7a7a7;
 }
 
 .Card li {
@@ -11,6 +12,7 @@
   left: 16px;
   font-size: 20px;
   font-weight: bold;
+  list-style: none;
 }
 
 .Card:hover {
@@ -19,4 +21,6 @@
 
 .Card img {
   border-radius: 10px;
+  height: 225px;
+  width: 225px;
 }

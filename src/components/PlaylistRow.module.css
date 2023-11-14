@@ -1,18 +1,15 @@
 .PlaylistRow {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   /* flex-wrap: wrap; */
   /* overflow: hidden; */
-
 }
 
 .PlaylistItems {
-
-  --column-count: 7;
+  /* --column-count: 7;
   --grid-gap: 12px;
   display: grid;
-  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
-  grid-gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr)); */
 }
 
 .PlaylistRow h2 {
@@ -26,19 +23,31 @@
 .PlaylistRow ul {
   /* display: flex;
   flex-wrap: wrap;
-  overflow: hidden; */
-/* 
+  overflow: hidden;
+
   --column-count: 4;
   --grid-gap: 12px;
   display: grid;
   grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
   grid-gap: var(--grid-gap); */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+  grid-template-rows: 1fr;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  grid-gap: 16px;
+  z-index: 3;
+  padding-left: 0;
+  padding-right: 15px;
+  max-height: minmax(164px, 1fr);
+  overflow: hidden;
 }
 
 .PlaylistRow li {
   list-style: none;
-  height: 350px;
-  width: 200px;
+  /* height: 350px; */
+  /* width: 200px; */
   /* border: solid green 1px; */
 }
 

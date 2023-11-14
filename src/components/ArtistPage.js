@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
+import classes from "./ArtistPage.module.css";
 import axios from "axios";
+import useId from "../utils/useId";
+import PopularTracks from "./PopularTracks";
+import Discography from "./Discography";
+import artistImagePlaceholder from "../icons/user.png";
+
+import TrackCard from "./TrackCard";
 
 const ArtistPage = (props) => {
+  const id = useId("artist");
+  // console.log(id);
   const [artist, setArtist] = useState();
   const [topTracks, setTopTracks] = useState();
-
+  const [discography, setDiscography] = useState();
   //will return albums, singles, appears_on, and compilations...
   const [artistAlbums, setArtistAlbums] = useState();
   const [artistSingles, setArtistSingles] = useState();
@@ -13,41 +22,42 @@ const ArtistPage = (props) => {
   const [artistFeatures, setArtistFeatures] = useState();
   const [relatedArtists, setRelatedArtists] = useState();
 
+  const controller = new AbortController();
+
   useEffect(() => {
-    // console.log("ARTIST LINK: " + props.link);
     axios({
-      url: `${props.link}`,
+      url: `https://api.spotify.com/v1/artists/${id}`,
       method: "get",
       headers: {
         Authorization: `Bearer ${props.accessToken}`,
       },
       params: {
-        // country: "US",
+        market: "US",
         // limit: 50,
       },
+      signal: controller.signal,
     })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setArtist(res.data);
         // setCategories(res.data.categories);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  useEffect(() => {
-    // console.log("ARTIST LINK: " + props.link);
+
     axios({
-      url: `${props.link}/top-tracks`,
+      url: `https://api.spotify.com/v1/artists/${id}/top-tracks`,
       method: "get",
       headers: {
         Authorization: `Bearer ${props.accessToken}`,
       },
       params: {
-        country: "US",
+        market: "US",
         // limit: 50,
-        include_groups: "album",
+        // include_groups: "album",
       },
+      signal: controller.signal,
     })
       .then((res) => {
         console.log(res);
@@ -57,114 +67,36 @@ const ArtistPage = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  useEffect(() => {
-    // console.log("ARTIST LINK: " + props.link);
-    axios({
-      url: `${props.link}/albums`,
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${props.accessToken}`,
-      },
-      params: {
-        // country: "US",
-        // limit: 50,
-        include_groups: "album",
-      },
-    })
-      .then((res) => {
-        console.log(res);
-        setArtistAlbums(res.data);
-        // setCategories(res.data.categories);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    // console.log("ARTIST LINK: " + props.link);
-    axios({
-      url: `${props.link}/albums`,
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${props.accessToken}`,
-      },
-      params: {
-        // country: "US",
-        // limit: 50,
-        include_groups: "single",
-      },
-    })
-      .then((res) => {
-        console.log(res);
-        setArtistSingles(res.data);
-        // setCategories(res.data.categories);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    // console.log("ARTIST LINK: " + props.link);
-    axios({
-      url: `${props.link}/albums`,
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${props.accessToken}`,
-      },
-      params: {
-        // country: "US",
-        // limit: 50,
-        include_groups: "compilation",
-      },
-    })
-      .then((res) => {
-        console.log(res);
-        setArtistCompilations(res.data);
-        // setCategories(res.data.categories);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  useEffect(() => {
-    // console.log("ARTIST LINK: " + props.link);
-    axios({
-      url: `${props.link}/albums`,
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${props.accessToken}`,
-      },
-      params: {
-        // country: "US",
-        // limit: 50,
-        include_groups: "appears_on",
-      },
-    })
-      .then((res) => {
-        console.log(res);
-        setArtistAppearsOn(res.data);
-        // setCategories(res.data.categories);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
-  if (artist) {
+    return () => {
+      controller.abort();
+    };
+  }, [id]);
+
+  if (artist && topTracks) {
+    const artistImageSource = artist.images[0]
+      ? artist.images[0].url
+      : artistImagePlaceholder;
     return (
       <div>
-        <h1>{artist.name}</h1>
-        <h4>XX monthly listeners</h4>
-        <div>
-            <h2>popular tracks</h2>
+        <div className={classes.ArtistBanner}>
+          <img className={classes.ArtistImage} src={artistImageSource}></img>
+          <h1>{artist.name}</h1>
+          {/* <h4>XX monthly listeners</h4> */}
         </div>
-        <div>
-            <h2>Popular Releases</h2>
-            <h2>Albums</h2>
-            <h2>Singles and EPs</h2>
-            <h2>Compilations</h2>
-        </div>
+
+        <PopularTracks topTracks={topTracks} />
+        {/* <div className={classes.TrackList}>
+          {topTracks.tracks.map((track) => (
+            <TrackCard track={track} key={track.id} />
+          ))}
+        </div> */}
+        <Discography id={id} accessToken={props.accessToken} />
+        {/* <div>
+          <h2>Albums</h2>
+          <h2>Singles and EPs</h2>
+          <h2>Compilations</h2>
+        </div> */}
       </div>
     );
   } else {

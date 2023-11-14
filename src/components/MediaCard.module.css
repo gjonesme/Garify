@@ -1,12 +1,11 @@
 .MediaCard {
-  /* width: 200px; */
-  /* margin: 20px; */
   padding: 15px;
   display: flex;
   flex-direction: column;
   background-color: #121212;
   color: #ffffff;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .MediaCardLink {
@@ -22,12 +21,11 @@
   text-transform: none;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: white;
   white-space: nowrap;
 }
 
 .Description {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: normal;
@@ -42,10 +40,9 @@
 }
 
 .MediaCard:hover {
-  background-color: #1a1a1a;
+  background-color: #242424;
 }
 
 .MediaCardImage {
-  /* border-radius: 5px; */
-  /* width: 150px; */
+  aspect-ratio: 1/1;
 }

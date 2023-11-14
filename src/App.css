@@ -1,7 +1,9 @@
 .App {
   display: flex;
-  /* height: 100%; */
-  /* /* height: 100vh; */
+  height: 100%;
+  /* color: white;
+  background-color: #000; */
+  /* border: 1px green solid; */
 }
 
 .Content {
@@ -9,23 +11,25 @@
 }
 
 .SideBar {
-  /* border: solid 1px green; */
   width: 350px;
+  height: 100%;
+  position: fixed;
 }
 
 .RightContainer {
   /* border: solid 1px blue; */
   /* height: 100%; */
   /* width: 80%; */
-  /* margin-left: 350px; */
+  margin-left: 350px;
   width: calc(100% - 350px);
-  background-color: #292929;
+  background-color: #121212;
+  overflow: auto;
 }
 
 .RightTopContainer {
   display: flex;
   flex-direction: row;
-  border: solid 1px red;
+  /* border: solid 1px red; */
 }
 
 .RightBottomContainer {

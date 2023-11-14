@@ -10,10 +10,10 @@ const PlaylistCard = (props) => {
           <img
             src={props.item.images[0].url}
             alt="playlist image here"
-            height={'175px'}
-            width={'175px'}
+            height={"175px"}
+            width={"175px"}
           />
-          <h3>{props.item.name}</h3>
+          <h3 className={classes.PlaylistName}>{props.item.name}</h3>
           <p>By: {props.item.owner.display_name}</p>
         </div>
       </>

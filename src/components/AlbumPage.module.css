@@ -1,0 +1,106 @@
+.AlbumBanner {
+  height: 200px;
+  background-color: #1a1a1a;
+  color: #fff;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.AlbumImage {
+  padding: 20px;
+}
+
+.AlbumInfo {
+  height: 50%;
+  align-self: flex-end;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+
+/* .AlbumName {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
+.PlayButton {
+  /* color: #1ed760; */
+  background-color: #1ed760;
+  border-radius: 50%;
+  border: none;
+  overflow: hidden;
+  padding: 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+.LikeButton {
+  color: #6a6a6a;
+  background-color: #121212;
+  border: none;
+  overflow: hidden;
+  padding: 8px;
+  cursor: pointer;
+  /* margin: 10px; */
+}
+
+.LikeButton:hover {
+  color: #fff;
+}
+
+.PlayButton:hover {
+  background-color: #1fdf64;
+  transform: scale(1.1);
+}
+
+.TrackListGrid {
+  display: grid;
+  color: #ccc;
+  /* padding-top: 25px; */
+  /* width: 90%; */
+  margin: 20px;
+}
+
+.TrackListHeader {
+  display: grid;
+  grid-template-columns: 30px auto 75px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  grid-gap: 16px;
+}
+
+.NumberHeader {
+  justify-self: end;
+}
+
+.Clock {
+  display: flex;
+  justify-content: center;
+}
+
+.TrackItemContainer {
+  display: grid;
+  grid-template-columns: 30px auto 75px;
+  width: 100%;
+}
+
+.TrackList {
+  margin-top: 10px;
+}
+
+.Runtime {
+  opacity: 0.5;
+}
+
+.ReleaseDate {
+  font-size: small;
+  font-weight: 500;
+  color: #777;
+}
+
+.Copyrights {
+  font-size: 0.7rem;
+  color: #777;
+}

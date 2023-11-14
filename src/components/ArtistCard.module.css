@@ -10,10 +10,11 @@
 }
 
 .ArtistCard:hover {
-    background-color: #1a1a1a;
+  background-color: #1a1a1a;
 }
 
 .ArtistCardImage {
-  border-radius: 50%;
-  /* width: 150px; */
+  /* border-radius: 50%; */
+  width: 225px;
+  height: 225px;
 }

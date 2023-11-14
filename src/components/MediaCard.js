@@ -3,8 +3,10 @@ import classes from "./MediaCard.module.css";
 
 import { Link } from "react-router-dom";
 
+import artistImagePlaceholder from "../icons/user.png";
+
 const MediaCard = (props) => {
-  console.log(props.mediaItem);
+  // console.log(props.mediaItem);
 
   const type = props.mediaItem.type;
 
@@ -12,15 +14,15 @@ const MediaCard = (props) => {
 
   const linkClickHandler = (e) => {
     props.setLink(props.mediaItem.href);
-    console.log('LINK SET TO: ' + props.mediaItem.href);
-  }
+    console.log("LINK SET TO: " + props.mediaItem.href);
+  };
 
   switch (type) {
     case "artist":
       title = props.mediaItem.name;
       imageSource = props.mediaItem.images[0]
         ? props.mediaItem.images[0].url
-        : "";
+        : artistImagePlaceholder;
       // props.mediaItem.images[0].url ?
       description = "ARTIST";
       id = props.mediaItem.id;
@@ -28,12 +30,18 @@ const MediaCard = (props) => {
     case "album":
       title = props.mediaItem.name;
       imageSource = props.mediaItem.images[0].url;
-      description = props.mediaItem.artists[0].name;
+      description = props.discography
+        ? props.mediaItem.release_date.slice(0, 4) +
+          " - " +
+          props.mediaItem.album_type
+        : props.mediaItem.artists[0].name;
       id = props.mediaItem.id;
       break;
     case "playlist":
       title = props.mediaItem.name;
-      imageSource = props.mediaItem.images[0].url;
+      imageSource = props.mediaItem.images[0]
+        ? props.mediaItem.images[0].url
+        : artistImagePlaceholder;
       description = props.mediaItem.owner.display_name;
       id = props.mediaItem.id;
       break;
@@ -49,6 +57,18 @@ const MediaCard = (props) => {
       description = props.mediaItem.release_date;
       id = props.mediaItem.id;
       break;
+    case "disc":
+      title = props.mediaItem.name;
+      imageSource = props.mediaItem.images[0].url;
+      description = props.mediaItem.release_date + props.mediaItem.album_type;
+      id = props.mediaItem.id;
+      break;
+    case "audiobook":
+      title = props.mediaItem.name;
+      imageSource = props.mediaItem.images[0].url;
+      description = props.mediaItem.authors[0].name;
+      id = props.mediaItem.id;
+      break;
     default:
       title = "not defined";
       imageSource = "not defined";
@@ -60,11 +80,17 @@ const MediaCard = (props) => {
   if (props.mediaItem) {
     // props.setLink(props.mediaItem.href);
     return (
-      <Link to={`/${type}/${id}`} className={classes.MediaCardLink} onClick={linkClickHandler}>
+      <Link
+        to={`/${type}/${id}`}
+        className={classes.MediaCardLink}
+        onClick={linkClickHandler}
+      >
         <div className={classes.MediaCard}>
           <img
             className={classes.MediaCardImage}
-            style={{ borderRadius: type === "artist" ? "50%" : "5px" }}
+            style={{
+              borderRadius: type === "artist" ? "50%" : "5px",
+            }}
             src={imageSource}
             alt="media image here"
           />
