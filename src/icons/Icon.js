@@ -5,6 +5,7 @@ import Library from "./Library";
 import CreatePlaylist from "./CreatePlaylist";
 import LikedSongs from "./LikedSongs";
 import Spotify from "./Spotify";
+import Garify from "./Garify";
 import Back from "./Back";
 import Forward from "./Forward";
 
@@ -21,6 +22,8 @@ const Icon = (props) => {
     return <LikedSongs />;
   } else if (props.iconName === "Spotify") {
     return <Spotify />;
+  } else if (props.iconName === "Garfy") {
+    return <Garify />;
   } else if (props.iconName === "Back") {
     return <Back />;
   } else if (props.iconName === "Forward") {
