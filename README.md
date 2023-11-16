@@ -12,4 +12,4 @@ Search
 ![Search](/images/Garify_Search.png)
 
 DEMO
-![Demo](/images/garify navigation.gif)
+![Demo](/images/garify_navigation.gif)
