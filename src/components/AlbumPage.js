@@ -160,7 +160,7 @@ const AlbumPage = (props) => {
       </div>
     );
   } else {
-    return <div>no album found</div>;
+    return <div></div>;
   }
 };
 

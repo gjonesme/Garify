@@ -2,6 +2,9 @@
 
 Practicing React by constructing a Spotify clone. This project is purely for educational purposes.
 
+DEMO
+![Demo](/images/garify_demo.gif)
+
 Homepage
 ![Homepage](/images/Garify_Homepage.png)
 
@@ -10,6 +13,3 @@ Browse
 
 Search
 ![Search](/images/Garify_Search.png)
-
-DEMO
-![Demo](/images/garify_navigation.gif)
